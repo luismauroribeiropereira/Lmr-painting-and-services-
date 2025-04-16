@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LMR Painting</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+    header, footer { background-color: #002b45; color: white; text-align: center; padding: 1rem; }
+    nav a { margin: 0 10px; color: white; text-decoration: none; }
+    .container { padding: 2rem; }
+    .services, .testimonials, .gallery, .contact { margin-top: 2rem; }
+    .lang-switch { position: absolute; top: 10px; right: 10px; }
+    form input, form textarea { display: block; width: 100%; margin-bottom: 1rem; padding: 0.5rem; }
+    form button { padding: 0.5rem 1rem; background: #002b45; color: white; border: none; cursor: pointer; }
+  </style>
+  <script>
+    function switchLang(lang) {
+      document.documentElement.lang = lang;
+      const elements = document.querySelectorAll('[data-pt], [data-en]');
+      elements.forEach(el => {
+        el.textContent = lang === 'pt' ? el.dataset.pt : el.dataset.en;
+      });
+    }
+  </script>
+</head>
+<body>
+  <div class="lang-switch">
+    <button onclick="switchLang('pt')">PT</button>
+    <button onclick="switchLang('en')">EN</button>
+  </div>
+  <header>
+    <h1 data-pt="LMR Painting" data-en="LMR Painting">LMR Painting</h1>
+    <nav>
+      <a href="#about" data-pt="Sobre" data-en="About">Sobre</a>
+      <a href="#services" data-pt="Serviços" data-en="Services">Serviços</a>
+      <a href="#testimonials" data-pt="Depoimentos" data-en="Testimonials">Depoimentos</a>
+      <a href="#gallery" data-pt="Galeria" data-en="Gallery">Galeria</a>
+      <a href="#contact" data-pt="Contato" data-en="Contact">Contato</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <section id="about">
+      <h2 data-pt="Sobre nós" data-en="About us">Sobre nós</h2>
+      <p data-pt="Somos especialistas em pintura residencial e comercial em Massachusetts." data-en="We specialize in residential and commercial painting in Massachusetts.">
+        Somos especialistas em pintura residencial e comercial em Massachusetts.
+      </p>
+    </section>
+
+    <section id="services" class="services">
+      <h2 data-pt="Nossos serviços" data-en="Our Services">Nossos serviços</h2>
+      <ul>
+        <li data-pt="Pintura interna e externa" data-en="Interior and exterior painting">Pintura interna e externa</li>
+        <li data-pt="Texturização e acabamento" data-en="Texturing and finishing">Texturização e acabamento</li>
+        <li data-pt="Reparos em drywall" data-en="Drywall repair">Reparos em drywall</li>
+      </ul>
+    </section>
+
+    <section id="testimonials" class="testimonials">
+      <h2 data-pt="Depoimentos" data-en="Testimonials">Depoimentos</h2>
+      <blockquote data-pt="Ótimo trabalho, recomendo!" data-en="Great job, I highly recommend!">Ótimo trabalho, recomendo!</blockquote>
+    </section>
+
+    <section id="gallery" class="gallery">
+      <h2 data-pt="Galeria de fotos" data-en="Photo Gallery">Galeria de fotos</h2>
+      <p data-pt="Fotos dos nossos projetos em breve." data-en="Photos of our projects coming soon.">Fotos dos nossos projetos em breve.</p>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2 data-pt="Entre em contato" data-en="Contact us">Entre em contato</h2>
+      <p>Email: <a href="mailto:lribeiropereira68@gmail.com">lribeiropereira68@gmail.com</a></p>
+      <p>Telefone: <a href="tel:9783789273">(978) 378-9273</a></p>
+      <form action="mailto:lribeiropereira68@gmail.com" method="post" enctype="text/plain">
+        <input type="text" name="name" placeholder="Seu nome / Your name" required>
+        <input type="email" name="email" placeholder="Seu email / Your email" required>
+        <textarea name="message" placeholder="Sua mensagem / Your message" required></textarea>
+        <button type="submit" data-pt="Enviar" data-en="Send">Enviar</button>
+      </form>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 LMR Painting</p>
+  </footer>
+</body>
+</html>
